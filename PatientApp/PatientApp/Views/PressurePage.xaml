@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatientApp.Views.PressurePage"
+             BackgroundColor="MistyRose"
+             Title="Ciśnienie"
+             >
+
+    <StackLayout Margin="20,35,20,20" BackgroundColor="MistyRose">
+       
+                         
+
+
+        <Button Text="Dodaj pomiar" BackgroundColor="Coral"
+            Clicked="OnButtonClicked" />
+
+        <StackLayout Margin="0,0,0,0">
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Szczegóły"
+            Clicked="DetailButton_Clicked" BackgroundColor="Coral" HeightRequest="50" WidthRequest="160"  Margin="0,0,0,0" />
+                <Button Text="Usuń pomiar"
+            Clicked="OnDeleteButtonClicked" BackgroundColor="Coral" HeightRequest="50" WidthRequest="160" Margin="20,0,0,0"/>
+
+            </StackLayout>
+
+            <Picker x:Name="picker"
+        Title="Wybierz stan"
+                SelectedIndexChanged="Filtr"
+        TitleColor="Red">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Wszystkie</x:String>
+                        <x:String>optymalne</x:String>
+                        <x:String>prawidłowe</x:String>
+                        <x:String>wysokie</x:String>
+                        <x:String>nadciśnienie 1</x:String>
+                        <x:String>nadciśnienie 2</x:String>
+                        <x:String>nadciśnienie 3</x:String>
+
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+        </StackLayout>
+        <StackLayout BackgroundColor="Salmon">
+            <StackLayout Orientation="Horizontal">
+
+            <Label Text="data"
+                               FontAttributes="Bold"
+                               FontSize="Medium"/>
+                <Label Text="ciśnienie(mmHG)" 
+                                   FontAttributes="Bold"
+                               FontSize="Medium"
+                       Margin="40,0,0,0"
+                       />
+
+                <Label Text="puls" 
+                                   FontAttributes="Bold"
+                               FontSize="Medium"
+                       Margin="40,0,0,0"
+                       />
+
+            </StackLayout>
+
+        </StackLayout>
+
+        <CollectionView x:Name="collectionView"  SelectionMode="Single">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+
+                            <Label Text="{Binding press_id}" IsVisible="false"
+                               TextColor="Silver"
+                               FontSize="Medium"/>
+
+
+                            <DatePicker Date="{Binding press_date}" IsEnabled="False"
+                               TextColor="Silver"
+                               FontSize="Medium"/>
+
+
+                            <Label Text="    "
+                               />
+
+                            <Label Text="{Binding systolic_pressure}" 
+                                FontAttributes="Bold"
+                                FontSize="Medium"/>
+                            <Label Text="{Binding diastolic_pressure }" 
+                                FontAttributes="Bold"
+                                FontSize="Medium"/>
+
+                            <Label Text="{Binding heart_rate }" 
+                                FontAttributes="Bold"
+                                FontSize="Medium"
+                                   Margin="90,0,0,0"
+                                   />
+
+                            <Label Text="{Binding press_info }" 
+                                FontAttributes="Bold"
+                                FontSize="Small"
+                                 IsVisible="false"
+                                   />
+
+
+                        </StackLayout>
+                        <BoxView HeightRequest="1"
+                   BackgroundColor="Black"
+                   Grid.Column="2"
+                  
+
+                   Grid.Row="2"
+                   VerticalOptions="End"/>
+                    </StackLayout>
+
+                </DataTemplate>
+
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+   
+    </StackLayout>
+
+
+</ContentPage>

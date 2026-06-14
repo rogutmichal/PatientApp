@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatientApp.Views.PressDetail"
+             BackgroundColor="MistyRose">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="ID ciśnienia" FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+            <Label x:Name="labelID"
+                   FontSize="Medium"
+                HorizontalOptions="CenterAndExpand" />
+                <Label Text="Data pomiaru" FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+
+                <Label x:Name="labelDate"
+                HorizontalOptions="CenterAndExpand" />
+                <Label Text="Ciśnienie skurczowe" FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+
+                <Label x:Name="labelSys"
+                
+                HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
+                <Label Text="Ciśnienie rozkurczowe" FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+
+                <Label x:Name="labelDia"
+                HorizontalOptions="CenterAndExpand" FontSize="Medium" />
+                <Label Text="Puls" FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+
+                <Label x:Name="labelHearth"
+                HorizontalOptions="CenterAndExpand" FontSize="Medium"  />
+                <Label Text="Informacja" FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+
+                <Label x:Name="labelInfo"
+                   HorizontalOptions="CenterAndExpand" FontSize="Medium" />
+
+            </StackLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

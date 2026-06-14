@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms" xmlns:xct="clr-namespace:Xamarin.Forms.BehaviorsPack;assembly=Xamarin.Forms.BehaviorsPack" xmlns:local21="clr-namespace:PatientApp.ViewModels" xmlns:local1="clr-namespace:PatientApp.Views"
+             x:Class="PatientApp.Views.CalendarPage"
+             BackgroundColor="MistyRose"
+             
+             >
+    <ContentPage.Behaviors>
+        <xct:EventToCommandBehavior
+                EventName="Appearing"
+                Command="{Binding AddAppointments}"  />
+       
+    </ContentPage.Behaviors>
+
+
+    <StackLayout Margin="20,35,20,20" BackgroundColor="MistyRose">
+        <Entry x:Name="TematEntry" Text="{Binding Title, Mode=TwoWay}"
+                        Placeholder="Wprowadź nazwę wydarzenia" />
+    
+        <local1:DateTimePicker x:Name="dateTimePicker" DateTime="{Binding StartDate}" StringFormat="dd-MM-yyyy HH:mm"></local1:DateTimePicker>
+        <local1:DateTimePicker DateTime="{Binding EndDate}" StringFormat="dd-MM-yyyy HH:mm"></local1:DateTimePicker>
+
+
+        <Button Text="Dodaj"
+                Clicked="OnButtonClicked" BackgroundColor="Coral"
+            Command="{Binding SaveEvent}"
+                />
+        <Grid>
+
+            <syncfusion:SfCalendar x:Name="calendar" ShowInlineEvents="true"
+        DataSource = "{Binding Meetings}">
+                <syncfusion:SfCalendar.BindingContext>
+                    <local21:ViewModel/>
+                </syncfusion:SfCalendar.BindingContext>
+            </syncfusion:SfCalendar>
+
+           
+        </Grid>
+    </StackLayout>
+
+</ContentPage>

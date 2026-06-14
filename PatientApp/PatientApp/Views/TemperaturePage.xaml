@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatientApp.Views.TemperaturePage"
+             BackgroundColor="MistyRose"
+             Title="Temperatura"
+             >
+            
+    <StackLayout Margin="20,35,20,20" BackgroundColor="MistyRose">
+      
+
+        <Button Text="Dodaj pomiar"
+            Clicked="OnButtonClicked" BackgroundColor="Coral" />
+
+        <StackLayout Margin="0,0,0,0">
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Szczególy"
+            Clicked="OnDetailButtonClicked" BackgroundColor="Coral" HeightRequest="50" WidthRequest="160"  Margin="0,0,0,0" />
+                <Button Text="Usuń pomiar"
+            Clicked="OnDeleteButtonClicked" BackgroundColor="Coral" HeightRequest="50" WidthRequest="160" Margin="20,0,0,0"/>
+
+               
+            </StackLayout>
+      
+        </StackLayout>
+
+      
+
+
+        <Picker x:Name="picker"
+        Title="Wybierz stan"
+                SelectedIndexChanged="Filtr"
+        TitleColor="Red">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Wszystkie</x:String>
+                    <x:String>gorączka</x:String>
+                    <x:String>podgorączkowy</x:String>
+                    <x:String>prawidłowo</x:String>
+                   
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <StackLayout BackgroundColor="IndianRed">
+            <StackLayout Orientation="Horizontal">
+
+
+
+                <Label Text="data"
+                               FontAttributes="Bold"
+                               FontSize="Medium"/>
+                <Label Text="temperatura" 
+                                   FontAttributes="Bold"
+                               FontSize="Medium"
+                       Margin="150,0,0,0"
+                       />
+                
+            </StackLayout>
+
+        </StackLayout>
+
+
+        <CollectionView x:Name="collectionView"  SelectionMode="Single" >
+           
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+
+                            <Label Text="{Binding temp_id}" IsVisible="false"
+                               TextColor="Black"
+                               FontSize="Medium"/>
+                         
+
+                        <Label Text="{Binding temp_date}"
+                               TextColor="Black"
+                               FontSize="Medium"/>
+
+
+                            <Label Text="    "
+                               />
+
+                            <Label Text="{Binding temperature}" 
+                                FontAttributes="Bold"
+                                FontSize="Small"/>
+                            <Label Text="C°" 
+                               FontAttributes="Bold"
+                                FontSize="Small"/>
+
+                            <Label Text="{Binding info}" 
+                               FontAttributes="Bold"
+                                FontSize="Small"/>
+
+                        </StackLayout>
+                        <BoxView HeightRequest="1"
+                   BackgroundColor="Black"
+                   Grid.Column="2"
+                  
+
+                   Grid.Row="2"
+                   VerticalOptions="End"/>
+                    </StackLayout>
+                    
+                    </DataTemplate>
+                
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+                
+            
+    </StackLayout>
+
+
+</ContentPage>

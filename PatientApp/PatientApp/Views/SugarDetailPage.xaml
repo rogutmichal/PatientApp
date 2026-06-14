@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatientApp.Views.SugarDetailPage"
+             BackgroundColor="MistyRose"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout>
+                <Label Text="ID pomiaru cukru" FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+                <Label x:Name="labelID"
+                   FontSize="Medium"
+                HorizontalOptions="CenterAndExpand" />
+                <Label Text="Data pomiaru" FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+
+                <Label x:Name="labelDate"
+                HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
+                <Label Text="Cukier" FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+
+                <Label x:Name="labelSugar"
+                
+                HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
+
+                <Label Text="Informacja" FontAttributes="Bold" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+
+                <Label x:Name="labelInfo"
+                   HorizontalOptions="CenterAndExpand" FontSize="Medium"/>
+
+            </StackLayout>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatientApp.Views.NewMeasPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="Nowy pomiar"
+             BackgroundColor="MistyRose"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:behavior="clr-namespace:PatientApp.Views"
+             ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+        <StackLayout Spacing="3" Padding="15">
+            <Entry x:Name="heightEntry"
+                   
+                   Keyboard="Numeric"  
+                        Placeholder="Wprowadź pomiar wzrostu w cm"
+
+              
+
+            />
+
+            <Entry x:Name="weightEntry" Keyboard="Numeric" MaxLength="3"
+                        Placeholder="Wprowadź pomiar wagi w kg" />
+            <Button Text="Oblicz BMI"  Clicked="OnBMIButtonClicked" BackgroundColor="Coral" HorizontalOptions="FillAndExpand"></Button>
+            <Entry x:Name="bmiEntry" IsEnabled="False"
+                        Placeholder="Aby obliczyć BMI naciśnij przycisk powyżej" />
+            <DatePicker x:Name="measDataPicker"
+                         />
+            <TimePicker x:Name="measTimePicker" />
+
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Anuluj" Clicked="OnCancelButtonClicked"  BackgroundColor="Coral" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Zapisz"   Clicked="OnSaveButtonClicked"  BackgroundColor="Coral" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>
