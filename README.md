@@ -76,9 +76,4 @@ The application is designed for patients and provides features such as:
 ## Project Status
 
 This project is no longer maintained or updated.
-  <img width="277" height="422" alt="image" src="https://github.com/user-attachments/assets/59e2749a-2e14-4355-9cb7-c1224728f17b" />
-</div>
 
-<div>
-  <img width="446" height="167" alt="image" src="https://github.com/user-attachments/assets/81eac50b-9a4e-44dc-8a74-75dc7f64e5bb" />
-</div>
